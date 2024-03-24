@@ -24,7 +24,7 @@ function Register(){
     const {user, isLoading , isError , isSuccess , message}  = useSelector((state) =>{
         return state.auth
     }) 
-    console.log('from Frontend',user , isSuccess , isError , message);
+    // console.log('from Frontend',user , isSuccess , isError , message);
     useEffect(() => {
         if(isError){
             toast.error(message)
