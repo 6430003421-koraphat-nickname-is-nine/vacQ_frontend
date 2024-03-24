@@ -7,7 +7,7 @@ function Home(){
         <>
         <section className = 'heading'>
             <h1>Vac Q: A Vaccine Booking System</h1>
-            <p>Plase choose from an option below</p>
+            <p>Please choose from an option below</p>
             <Link to='/new-ticket' className='btn btn-reverse btn-block'>
                 <FaQuestionCircle/>Creat New Appointment
             </Link>

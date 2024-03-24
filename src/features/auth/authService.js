@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:5000/api/v1/register'
+const API_URL = 'http://localhost:5000/api/v1/auth/register'
 
 //Register User 
 
@@ -8,13 +8,12 @@ const register = async (userData) =>{
     try{
         const response = await axios.post(API_URL , userData)
         console.log(JSON.stringify(response.data))
-        const resdata = response.data;
-        console.log(resdata.name)
-        if( resdata){
+        console.log(response.data.name)
+        if( response.data){
             // localStorage.setItem('user',JSON.stringify(response.data))
-            localStorage.setItem('user',resdata.name)
+            localStorage.setItem('user',response.data.name)
         }
-        return resdata.name //response.data
+        return response.data.name //response.data
     }catch(err){
         console.log('authService: register')
         console.log(err);

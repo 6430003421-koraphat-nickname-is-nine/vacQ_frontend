@@ -1,5 +1,5 @@
 import { useState , useEffect } from "react";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { FaUser } from "react-icons/fa";
 
@@ -50,7 +50,8 @@ function Register(){
 
         if(password !== password2){
             toast.error('Passwords do not match')
-        }else{
+        }
+        else{
             const userData = {
                 name , 
                 email, 
