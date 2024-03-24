@@ -1,10 +1,11 @@
 import { useState , useEffect } from "react";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { FaUser } from "react-icons/fa";
 
-import { useSelector , useDispatch} from 'react-redux'
-import {register , reset} from '../features/auth/authSlice'
+import { useSelector , useDispatch} from 'react-redux';
+import {register , reset} from '../features/auth/authSlice';
+
 
 function Register(){
     const [fromData , setFormData] = useState({
@@ -15,7 +16,7 @@ function Register(){
         role: 'user'
     });
 
-    const {name,email , password , password2 , role} = fromData;
+    const {name, email , password , password2 , role} = fromData;
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -23,7 +24,7 @@ function Register(){
     const {user, isLoading , isError , isSuccess , message}  = useSelector((state) =>{
         return state.auth
     }) 
-
+    console.log('from Frontend',user , isSuccess , isError , message);
     useEffect(() => {
         if(isError){
             toast.error(message)
@@ -48,7 +49,7 @@ function Register(){
     const onSubmit = (e) =>{
         e.preventDefault()
 
-        if(password !== password2){
+        if(password!==password2){
             toast.error('Passwords do not match')
         }
         else{
@@ -72,7 +73,8 @@ function Register(){
             <p>Please create an account</p>
         </section>
         <section>
-            <form onSubmit = 'form'>
+            <form onSubmit = {onSubmit}>
+                
                 <div className="form-group">
                     <input type="text" className="form-control" id="name" name="name" value={name} onChange={onChange} placeholder="Enter Your Name" required/>
                 </div>
@@ -96,6 +98,7 @@ function Register(){
                 <div className="form-group">
                     <button className="btn btn-block">Submit</button>
                 </div>
+                
             </form>
         </section>
 

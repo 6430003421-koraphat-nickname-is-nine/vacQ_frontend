@@ -7,7 +7,7 @@ const API_URL = 'http://localhost:5000/api/v1/auth/register'
 const register = async (userData) =>{
     try{
         const response = await axios.post(API_URL , userData)
-        console.log(JSON.stringify(response.data))
+        console.log('respones data',JSON.stringify(response.data))
         console.log(response.data.name)
         if( response.data){
             // localStorage.setItem('user',JSON.stringify(response.data))
