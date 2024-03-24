@@ -1,4 +1,4 @@
-import {createSlice , createAsynThunk} from '@reduxjs/toolkit'
+import {createSlice , createAsyncThunk} from '@reduxjs/toolkit'
 import authService from './authService'
 
 const user = localStorage.getItem('user')
@@ -13,7 +13,7 @@ const initialState = {
 
 //Register New User
 
-export const register = createAsynThunk('auth/register' , async(user , thunkAPI) =>{
+export const register = createAsyncThunk('auth/register' , async(user , thunkAPI) =>{
     console.log(user);
 
     try{
@@ -29,7 +29,7 @@ export const register = createAsynThunk('auth/register' , async(user , thunkAPI)
 
 //login User
 
-export const login = createAsynThunk('auth/login' , async(user,thunkAPI)=> {
+export const login = createAsyncThunk('auth/login' , async(user,thunkAPI)=> {
     console.log(user);
 })
 
