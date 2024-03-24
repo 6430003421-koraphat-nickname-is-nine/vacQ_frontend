@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom'
 import { toast } from 'react-toastify';
 import { FaUser } from "react-icons/fa";
 
-import {useDispatch, useSelector , } from 'react-redux'
+import { useSelector , useDispatch} from 'react-redux'
 import {register , reset} from '../features/auth/authSlice'
 
 function Register(){
@@ -31,7 +31,7 @@ function Register(){
 
         // redirect when login
 
-        if(isSuccess||user){
+        if(isSuccess || user){
             navigate('/')
         }
 
@@ -50,12 +50,11 @@ function Register(){
 
         if(password !== password2){
             toast.error('Passwords do not match')
-        }
-        else{
+        }else{
             const userData = {
                 name , 
                 email, 
-                password , 
+                password, 
                 role
             }
 
